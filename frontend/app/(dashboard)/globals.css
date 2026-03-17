@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #f8fafc;
+    --foreground: #0f172a;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  color-scheme: light;
+}
+
+/* Keep Next/React dev tooling from dimming or blocking the dashboard in local dev. */
+#nextjs__container,
+nextjs-portal,
+.nextjs-portal,
+[data-nextjs-dialog-overlay],
+[data-nextjs-toast],
+[data-nextjs-dev-overlay],
+[data-next-badge-root],
+#webpack-dev-server-client-overlay,
+#react-devtools-portal {
+  display: none !important;
+  pointer-events: none !important;
+}
